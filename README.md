@@ -1,4 +1,5 @@
-# DSA Journey
+[DSA Journey](https://app.clickup.com/9016625685/whiteboards/8cpxjgn-476)
+
 
 Welcome to my **Data Structures and Algorithms (DSA)** journey! This repository is dedicated to my learning process as I explore essential DSA concepts, algorithms, data structures, problem-solving techniques, and resources. It serves as a personal guide to help solidify my understanding and improve my problem-solving skills in programming.
 
