@@ -1,6 +1,15 @@
 #include <iostream>
 using namespace std;
 
+
+void  fun(int arr[], int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        cout << arr[i] << endl;
+    }
+}
+
 int main()
 {
 
@@ -108,11 +117,23 @@ int main()
 
     // 7. array rotation one time
 
-    int temp = arr[arr.size() - 1];
-    for (int i = arr.size() - 1; i > 0; i--)
-    {
-        arr[i] = arr[i - 1];
-    }
-    arr[0] = temp;
-    return arr;
+    // int temp = arr[arr.size() - 1];
+    // for (int i = arr.size() - 1; i > 0; i--)
+    // {
+    //     arr[i] = arr[i - 1];
+    // }
+    // arr[0] = temp;
+    // return arr;
+
+    // 8. array pass in function 
+
+    int arr[5] = {1, 2, 3, 4, 5};
+    int n = 5;
+
+    fun(arr, n);
+
+
 }
+
+
+
