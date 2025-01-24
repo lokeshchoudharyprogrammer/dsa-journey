@@ -3,7 +3,6 @@
 using namespace std;
 
 // 1108. Defanging an IP Address
-// String Rotated by 2 Places
 
 int main()
 {
@@ -39,7 +38,6 @@ int main()
 }
 
 // 1832. Check if the Sentence Is Pangram
-
 var checkIfPangram = function(sentence)
 {
     let sentence_array = sentence.split("");
