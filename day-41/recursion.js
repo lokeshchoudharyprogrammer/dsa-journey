@@ -54,6 +54,7 @@ const print_array3=(arr,n)=>{
       return
     }
     console.log(arr[n]);
+    
     print_array(arr,n-1)
     // k++;
   }
