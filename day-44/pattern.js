@@ -25,5 +25,9 @@ const Print_Patterns = () => {
         console.log(str)
     }
 }
+ 
+// Print_Patterns()
 
-Print_Patterns()
+
+
+
