@@ -11,6 +11,7 @@ void printF(int ind, vector<int> &ds, int arr[], int n) {
   
   ds.push_back(arr[ind]);
   printF(ind+1,ds,arr,n);
+  
   ds.pop_back();
   printF(ind+1,ds,arr,n);
   
