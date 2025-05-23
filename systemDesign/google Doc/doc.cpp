@@ -6,57 +6,56 @@
 using namespace std;
 
 class DocEditor {
+private:
+    vector<string> docElements;
+    string cachedRenderedDoc;
 
-    private:
-    vector<string>docElements;
-    string renderedDoc;
-
-    public:
-    void addText(string text){
+public:
+    void addText(const string& text) {
         docElements.push_back(text);
+        cachedRenderedDoc.clear(); // clear cache
     }
 
-    void addImage(string image){
+    void addImage(const string& image) {
         docElements.push_back(image);
+        cachedRenderedDoc.clear(); // clear cache
     }
 
-    string renderedDoc(){
-        if(renderedDoc.empty()){
+    string renderDocument() {
+        if (cachedRenderedDoc.empty()) {
             string result;
-
-            for(auto& element:docElements){
-               if(element.find(".png") != string::npos){
-                result += "<img src=\""+element+"\"/>";
-               }else{
-                result += element;
-               }
+            for (auto& element : docElements) {
+                if (element.find(".png") != string::npos || element.find(".jpg") != string::npos) {
+                    result += "<img src=\"" + element + "\"/>\n";
+                } else {
+                    result += "<p>" + element + "</p>\n";
+                }
             }
-            renderedDoc = result;
+            cachedRenderedDoc = result;
         }
-
-       return renderedDoc;
-  
+        return cachedRenderedDoc;
     }
 
-    void saveToFile(string filename){
-        ofstream file('filename.txt');
-        if(file.is_open()){
-            file << renderedDoc();
+    void saveToFile(const string& filename) {
+        ofstream file(filename); // fixed: pass actual filename
+        if (file.is_open()) {
+            file << renderDocument();
             file.close();
-            cout << "File saved successfully" << endl;
-        }else{
-            cout << "Unable to open file" << endl;
+            cout << "File saved successfully.\n";
+        } else {
+            cout << "Unable to open file.\n";
         }
-        
     }
-}
+};
 
-int main(){
+int main() {
     DocEditor editor;
     editor.addText("Hello World");
     editor.addImage("image.png");
     editor.addText("This is a test");
-    cout << editor.renderedDoc() << endl;
-    editor.saveToFile("output.txt");
+
+    cout << editor.renderDocument() << endl;
+    editor.saveToFile("output.html"); // saved as HTML
+
     return 0;
 }
