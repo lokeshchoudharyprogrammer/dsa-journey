@@ -24,6 +24,7 @@ int main() {
     if (rootVal == 0) return 0; 
 
     Node *root = new Node(rootVal);
+    
     q.push(root);
 
     while (!q.empty()) {
